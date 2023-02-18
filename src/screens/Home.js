@@ -44,9 +44,9 @@ const Home = (props) => {
         <View style={Styles.textInputContainer}>
           <Text style = {{fontSize:30}}>{'Menu'}</Text>
         </View>
+        
         </Pressable>
       </SafeAreaView>
-
     </ImageBackground>
   )
 }

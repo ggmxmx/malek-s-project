@@ -1,28 +1,28 @@
-import { View, Text, TextInput, StyleSheet, Button, Image,ImageBackground,ScrollView ,Pressable} from 'react-native'
 import React from 'react'
-import { useState , Component} from 'react'
+import {useState} from 'react'
+import { View , StyleSheet , ScrollView , Image , ImageBackground , Text} from 'react-native'
+import Images from '../assets/images'
 import Card from '../components/Amount'
-import images from '../assets/images'
-// import data.Meales
-// import { Pressable } from 'react-native/Libraries/Components/Pressable/Pressable'
 
-const Burgers = () =>{
-    // const renderMeals = () => {
-    //     return Burgers.map
 
-    // }
-   
-    
+const Other = () => {
+    const [background,setbackground] = useState(Images.homeBackground)
+    const [potato,srtPotato] = useState(Images.potato)
 
-   
     return(
-        <ImageBackground source={require('../assets/images/background.png')}>
+        <ImageBackground source={background} style = {{flex:1}}>
         <ScrollView>
-
+            <View style = {styles.orderboared}>
+                <Image source={potato} style = {styles.imagesStyle}/>
+                <Text style = {styles.Text}>{'Potato'}</Text>
+                <Text style = {styles.priceStyle}>{'Price: 5'}</Text>
+                <Card/>
+            </View>
         </ScrollView>
         </ImageBackground>
     )
 }
+export default Other;
 const styles = StyleSheet.create({
     imagesStyle:{
         width:90,
@@ -57,10 +57,4 @@ const styles = StyleSheet.create({
         marginTop:-10,
         color:'rgba(255,255,255,0.8)'
        },
-       amountStyle:{
-        alignSelf:'center',
-        fontSize:20,
-        color:'white'
-       }
 })
-export default Burgers
