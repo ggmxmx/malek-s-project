@@ -1,23 +1,58 @@
-import React, { useState } from 'react';
+import React, { useContext, useState  } from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View, Image } from 'react-native';
+import ResturantContext from '../../store/resturantContext';
 
 const Card = props => {
   const amountSaver = amount
   const { image, price, name } = props;
+ 
+ const {cart , setCart} =  useContext(ResturantContext)
 
-  const [amount, setamount] = useState(0);
+ const [amount, setamount] = useState(0);
+
+ const orderIndex = cart?.findIndex(order => order.name === name );  
+
+ const removeOrderFromCart = () => {
+      
+ }
 
   amountHandler = () => {
     if (amount < 1) {
       setamount(0)
-    } else {
+      removeOrderFromCart();
+      return ;
+    } else { 
       setamount(amount - 1)
     }
-  }
+
+   
+    var cartCopy = cart ; 
+
+    const order = {
+      name , 
+      price , 
+      image , 
+      finallPrice:price * amount , 
+    }
+
+    if(orderIndex == -1 ) {
+      cartCopy.push(order);
+    }else {
+      cartCopy[orderIndex] = order ; 
+    }
+
+    setCart([...cartCopy])
+
+  } 
 
   amountHandler2 = () => {
     setamount(amount + 1)
   }
+  const finallPrice = () =>{
+    return (
+      <Text style = {styles.Text}>{price * amount}</Text>
+    )
+}
 
 
 
@@ -39,6 +74,7 @@ const Card = props => {
 
       <Pressable onPress={amountHandler}>
         <Text style={styles.amountStyle}>-</Text>
+        <Text style = {styles.amountStyle}>{"Finall price: " + price*amount}</Text>
       </Pressable>
     </View>
 
@@ -53,8 +89,9 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(159,0,205)',
     alignSelf: 'center',
     marginBottom: 10,
-  
-    marginTop: 10
+
+    borderRadius:15,
+        marginTop: 10
 
   },
   Text: {
@@ -78,7 +115,8 @@ const styles = StyleSheet.create({
     width:90 , 
     height:90 ,
     marginTop:15 , 
-    marginLeft:15 ,  
+    marginLeft:15 ,
+    borderRadius:15 
   },
   productContainer: {
     flexDirection: 'row',

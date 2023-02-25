@@ -22,6 +22,8 @@ const Meals = (props) => {
         })
     }
 
+   
+
     return (
         <ImageBackground source={Images.homeBackground()} style={{flex:1}}>
             <Text style={{color:'#ffff' , fontSize:30 , textAlign:'center'}} >{catrgory}</Text>

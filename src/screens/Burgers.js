@@ -3,6 +3,8 @@ import React from 'react'
 import { useState , Component} from 'react'
 import Card from '../components/Amount'
 import images from '../assets/images'
+import amount from '../res/mokData/meals'
+import price from '../res/mokData/meals'
 // import data.Meales
 // import { Pressable } from 'react-native/Libraries/Components/Pressable/Pressable'
 
@@ -18,7 +20,7 @@ const Burgers = () =>{
     return(
         <ImageBackground source={require('../assets/images/background.png')}>
         <ScrollView>
-
+            <Text>{price*amount}</Text>
         </ScrollView>
         </ImageBackground>
     )

@@ -8,17 +8,16 @@ import { NavigationAction } from 'react-navigation'
 // import { ScrollView } from 'react-navigation'
 import axios from 'axios'
 import CategoryItem from '../components/CagtegoryItem'
+import thx from "../res/mokData/meals"
 
 const Page2 = (props) => {
   const [background, setbackground] = useState(images.homeBackground);
-  const [thxView, setThxView] = useState(false);
+  const BuyPg = () => {
+    props.navigation.navigate(ScreensName.Buy)
+  }
+  
 
-  const thx = () => {
-    setThxView(true);
-  }
-  const thx2 = () => {
-    setThxView(false);
-  }
+  
 
 
 
@@ -26,10 +25,6 @@ const Page2 = (props) => {
     {
       title: "Burgers",
       image: images.burger(),
-    },
-    {
-      title: "Shnitzel",
-      image: images.friedChicken(),
     },
     {
       title: "Fried Chicken",
@@ -40,15 +35,8 @@ const Page2 = (props) => {
       image: images.pizza(),
     },
     {
-      title: "Others",
+      title: "Other",
       image: images.potato(),
-    },
-    {
-      title: "Steak",
-      image: images.burger(),
-    },
-    {
-      title: "Buy",
     },
   ]
 
@@ -61,21 +49,7 @@ const Page2 = (props) => {
   }
 
 
-  if (thxView) {
-    return (
-      <ImageBackground source={background} style={{ flex: 1 }}>
-        <View style={{ justifyContent: 'center', flex: 1, alignItems: 'center' }}>
-          <Text style={{ fontSize: 30, color: 'white' }}>{'Thanks to baught from us'}</Text>
-          <Text style={{ fontSize: 30, color: 'white' }}>{'Back againe'}</Text>
-          <Pressable onPress={thx2}>
-            <View style={{ borderWidth: 1, borderColor: 'white', backgroundColor: 'rgba(255,255,255,0.3)', alignSelf: 'center', height: 50, width: 150, borderRadius: 10, alignItems: 'center', justifyContent: 'center', marginTop: 60 }}>
-              <Text style={{ fontSize: 30 }}>Back</Text>
-            </View>
-          </Pressable>
-        </View>
-      </ImageBackground>
-    )
-  }
+  
 
 
 
@@ -85,6 +59,11 @@ const Page2 = (props) => {
       <ImageBackground source={background} style={{ flex: 1 }}>
         <ScrollView>
           {renderCategories()}
+          <Pressable onPress={BuyPg}>
+          <View style = {styles.orderboared}>
+          <Text style = {styles.Text}>{'Buy'}</Text>
+          </View>
+          </Pressable>
         </ScrollView>
       </ImageBackground>
     </View>
@@ -145,10 +124,8 @@ const styles = StyleSheet.create({
   Text: {
     alignSelf: 'center',
     fontSize: 30,
-    marginTop: -65,
-    marginBottom: 30,
     color: 'white',
-    marginLeft: 50
+    
   },
 
   goalsContainer: {

@@ -9,6 +9,7 @@ import ScreensName from "./ScreensName";
 import Pizza from "../src/screens/Pizza";
 import Other from "../src/screens/Other";
 import Meals from "../src/screens/Meals";
+import Buy from "../src/screens/Buy";
 
 
 
@@ -27,6 +28,7 @@ const MainNavigation = () => {
                 <Stack.Screen name={ScreensName.Pizza}component = {Pizza}/>
                 <Stack.Screen name={ScreensName.other}component = {Other}/>
                 <Stack.Screen name={ScreensName.Meals}component = {Meals}/>
+                <Stack.Screen name = {ScreensName.Buy} component = {Buy}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

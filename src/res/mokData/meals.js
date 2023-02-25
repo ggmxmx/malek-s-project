@@ -21,47 +21,40 @@ const MealesData = {
             name: "Chicken burger",
             price: 20,
             image: Images.chickenburger()
-        }
+        },
+        
     ],
     Pizza: [
         {
-            name: "Larg Pizza",
-            price: 65,
+            name: "Pepperony",
+            price: 50,
             image: Images.pepperoni()
         },
         {
-            name: "Personal Pizza",
-            price: 15,
+            name: "Vegetables",
+            price: 50,
             image: Images.vegetables()
         },
         {
-            name: "tareq Pizza",
-            price: 115,
+            name: "pineapple",
+            price: 45,
             image: Images.pineApple()
         },
     ],
-    Steak: [
+    Other:[
         {
-            name: "Cheese burger",
-            price: 120,
-            image: Images.cheeseburger()
+            name:"Potato",
+            price:7,
+            image: Images.potato()
         },
         {
-            name: "Double burger",
-            price: 130,
-            image: Images.doubleburger()
-        },
-        {
-            name: "Fish burger",
-            price: 115,
-            image: Images.fishburger()
-        },
-        {
-            name: "Chicken burger",
-            price: 120,
-            image: Images.chickenburger()
+            name:"Sinammon",
+            price:5,
+            image: Images.sinammon(),
         }
+
     ]
+   
 
 }
 

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     imagesorderboard2: {
-        flex: 1
+        flex: 1,
     },
     orderboared: {
         flex: 1,

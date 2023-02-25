@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -28,15 +28,24 @@ import {
 import MainNavigation from './route/nav';
 import Home from './src/screens/Home';
 import Missions3 from './src/screens/Page2';
+import ResturantContext from './store/resturantContext';
+import ResturantProvider from './store/resturantProvider';
 
 
 
-const App =()=>{
+const App = () => {
 
   return (
-
     <View style={styles.container}>
-      <MainNavigation />
+      <ResturantProvider>
+        <ResturantContext.Consumer>
+          {context => {
+            return (
+              <MainNavigation />
+            )
+          }}
+        </ResturantContext.Consumer>
+      </ResturantProvider>
     </View>
   )
 }

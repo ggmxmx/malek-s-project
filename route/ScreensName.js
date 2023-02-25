@@ -5,7 +5,8 @@ const ScreensName = {
     FriedCicken: "Fried Chicken",
     Pizza: "Pizza",
     other: "Other", 
-    Meals:"Meals"
+    Meals:"Meals",
+    Buy:"Buy"
 }
 
 export default ScreensName; 

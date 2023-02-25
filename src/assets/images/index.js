@@ -17,6 +17,7 @@
     vegetables:() => require('./vegetables.png'),
     doubleCheese:() => require('./doublecheese.png'),
     potato:() => require('./potato.png'),
+    sinammon:() => require('./sinammon.png')
 }
 
 export default Images; 
